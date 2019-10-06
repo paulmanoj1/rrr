@@ -1,0 +1,1258 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.2">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="54" y="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="True" />
+          <Name>Input2</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <FileInput>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+          </FileInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Product-Sales-With-dups-Lesson-18.xlsx</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="378" y="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Customer ID" order="Ascending" />
+            <Field field="Date_Of_Sale" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Customer ID - Ascending
+Date_Of_Sale - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Customer ID" order="Ascending" />
+            <Field field="Date_Of_Sale" order="Descending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="498" y="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Customer ID" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="1">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Unique">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Customer ID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Duplicates">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Customer ID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="222" y="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Order_Number" />
+            <Field field="Date_Of_Sale" />
+            <Field field="Product" />
+            <Field field="Sales" />
+            <Field field="Quantity" />
+            <Field field="Discount" />
+            <Field field="Profit" />
+            <Field field="Shipping Cost" />
+            <Field field="Order Priority" />
+            <Field field="Customer ID" />
+            <Field field="First Name" />
+            <Field field="Last Name" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Unique">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Order_Number" order="Asc" />
+            <Field field="Date_Of_Sale" order="Asc" />
+            <Field field="Product" order="Asc" />
+            <Field field="Sales" order="Asc" />
+            <Field field="Quantity" order="Asc" />
+            <Field field="Discount" order="Asc" />
+            <Field field="Profit" order="Asc" />
+            <Field field="Shipping Cost" order="Asc" />
+            <Field field="Order Priority" order="Asc" />
+            <Field field="Customer ID" order="Asc" />
+            <Field field="First Name" order="Asc" />
+            <Field field="Last Name" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Duplicates">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Order_Number" order="Asc" />
+            <Field field="Date_Of_Sale" order="Asc" />
+            <Field field="Product" order="Asc" />
+            <Field field="Sales" order="Asc" />
+            <Field field="Quantity" order="Asc" />
+            <Field field="Discount" order="Asc" />
+            <Field field="Profit" order="Asc" />
+            <Field field="Shipping Cost" order="Asc" />
+            <Field field="Order Priority" order="Asc" />
+            <Field field="Customer ID" order="Asc" />
+            <Field field="First Name" order="Asc" />
+            <Field field="Last Name" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="642" y="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Date_Of_Sale" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Date_Of_Sale - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Date_Of_Sale" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="762" y="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>10</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 10</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Date_Of_Sale" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="774" y="168" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Last</Mode>
+          <N>10</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Last 10</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Date_Of_Sale" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="870" y="108" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="954" y="108" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_11248_0978f801a5114fd3b02015985a4dd69b_\Engine_11580_8cc76ecec6c648158cd075f20ec9d6e8_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="774" y="264" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Customer ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Customer ID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Customer ID" selected="True" rename="Right_Customer ID" input="Right_" />
+                <SelectField field="Right_First Name" selected="True" rename="Right_First Name" input="Right_" />
+                <SelectField field="Right_Last Name" selected="True" rename="Right_Last Name" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Customer ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Right_Customer ID" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="Double" />
+            <Field name="Right_First Name" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+            <Field name="Right_Last Name" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+            <Field name="City" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+            <Field name="State" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Customer ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Customer ID" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+            <Field name="City" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+            <Field name="State" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Customer ID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="276" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Retail-Customer-demographics.xlsx
+Table=`Sales$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Customer ID" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+            <Field name="City" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+            <Field name="State" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1002" y="264" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_11248_0978f801a5114fd3b02015985a4dd69b_\Engine_11580_6b6aa58783d84488938274b79bd21028_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="918" y="264" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: (Multiple Sources)" type="Double" />
+            <Field name="First Name" size="255" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="Last Name" size="255" source="File: (Multiple Sources)" type="V_String" />
+            <Field name="Right_Customer ID" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="Double" />
+            <Field name="Right_First Name" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+            <Field name="Right_Last Name" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+            <Field name="City" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+            <Field name="State" size="255" source="File: E:\Alteryx\Retail-Customer-demographics.xlsx|||`Sales$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings>
+        <Position x="906" y="348" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="FrequencyFields">&lt;Field field="Quantity" selected="True" /&gt;&lt;Field field="*Unknown" selected="False" /&gt;</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Data">
+          <RecordInfo>
+            <Field name="Field_Name" size="8" source="Summarize: GroupBy - Name" type="String" />
+            <Field name="Field_Value" size="19" source="Summarize: GroupBy - Value" type="V_String" />
+            <Field name="Frequency" source="Summarize: Count - Value" type="Int64" />
+            <Field name="Percent" scale="2" size="19" source="Formula: ([Frequency]/[Total Records])*100" type="FixedDecimal" />
+            <Field name="Cumulative Frequency" source="RunningTotal: Total of Frequency" type="Int64" />
+            <Field name="Cumulative Percent" scale="2" size="19" source="Formula: ([RunTot_Frequency]/[Total Records])*100" type="FixedDecimal" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Report">
+          <RecordInfo>
+            <Field name="Name" size="8" source="Summarize: GroupBy - Name" type="String" />
+            <Field name="Message" size="254" source="Formula: IF [Type] IN (&quot;Byte&quot;, &quot;Int16&quot;, &quot;Int32&quot;, &quot;Int64&quot;)&#xA;AND [UniqueValues] &lt;= 10&#xA;THEN 'This field has a small number of unique values, and appears to be categorical. Consider changing the field data type to &quot;string&quot; if you intend to use it as a categorical field later in your processing.'&#xA;ELSE &quot;&quot;&#xA;ENDIF" type="String" />
+            <Field name="Table" size="2147483647" source="Report:Table:Basic:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Interactive">
+          <RecordInfo>
+            <Field name="Text" size="2147483647" source="Report:Text:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="Predictive Tools\Frequency.yxmc" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1026" y="348" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_11248_0978f801a5114fd3b02015985a4dd69b_\Engine_11580_cadbe633a35e4702983bdb4eab4a1e3e_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="786" y="348" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Quantity" selected="True" type="V_String" size="19" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Order_Number" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+            <Field name="Product" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Sales" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Quantity" size="19" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Discount" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Profit" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Shipping Cost" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="Order Priority" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Customer ID" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Double" />
+            <Field name="First Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+            <Field name="Last Name" size="255" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Date_Of_Sale" order="Ascending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1098" y="348" width="100" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>One way frequency</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1110" y="420" width="100" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Multiple ways frequency</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings>
+        <Position x="906" y="420" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="ChiSquare">True</Value>
+          <Value name="Var1 Chi">Product</Value>
+          <Value name="Var2 Chi">Order Priority</Value>
+          <Value name="NoChiSquare">False</Value>
+          <Value name="Var1">Order_Number</Value>
+          <Value name="Var2">Order_Number</Value>
+          <Value name="Var3" />
+          <Value name="Var4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Data">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from __ContingencyColumnField" name="InputField_Product" size="5424" source="TextToColumns: Parsed from __ContingencyColumnField" type="String" />
+            <Field name="InputField_Order Priority" size="5424" source="Summarize: GroupBy - __ContingencyRowField" type="String" />
+            <Field name="Frequency" source="Summarize: Count - __ContingencyRowField" type="Int64" />
+            <Field name="Percent" scale="2" size="19" source="Formula: [Frequency] / [Total] * 100" type="FixedDecimal" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Report">
+          <RecordInfo>
+            <Field name="Layout" size="2147483647" source="Report:Layout:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="Predictive Tools\ContingencyTable.yxmc" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1038" y="420" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_11248_0978f801a5114fd3b02015985a4dd69b_\Engine_11580_be082c69ef3d4b29b84d6a0eb2219b8c_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="978" y="420" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="InputField_Product" />
+          </GroupFields>
+          <HeaderField field="InputField_Order Priority" />
+          <DataField field="Frequency" />
+          <Methods>
+            <Method method="Sum" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from __ContingencyColumnField" name="InputField_Product" size="5424" source="CrossTab:Group:Sum:" type="String" />
+            <Field name="Critical" source="CrossTab:Header:InputField_Order Priority:Critical:Sum:" type="Int64" />
+            <Field name="High" source="CrossTab:Header:InputField_Order Priority:High:Sum:" type="Int64" />
+            <Field name="Medium" source="CrossTab:Header:InputField_Order Priority:Medium:Sum:" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="InputField_Product" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1098" y="468" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output38</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="138" y="192" width="153.9171" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Unique dates</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+            <Position x="283" y="253" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UniqueFields>
+                <Field field="Date_Of_Sale" />
+              </UniqueFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Unique">
+              <RecordInfo>
+                <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Date_Of_Sale" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+            <MetaInfo connection="Duplicates">
+              <RecordInfo>
+                <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Date_Of_Sale" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="391" y="241" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_11248_0978f801a5114fd3b02015985a4dd69b_\Engine_11580_e3a0743e2a664d9aa43b31210eab9127_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="163" y="253" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Date_Of_Sale" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Date_Of_Sale" source="File: E:\Alteryx\Product-Sales-With-dups-Lesson-18.xlsx" type="Date" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="401" y="54" width="224.6563" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Summarize Unique Values</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="426" y="134.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Product" action="GroupBy" rename="Product" />
+                <SummarizeField field="Sales" action="Sum" rename="Sum_Sales" />
+                <SummarizeField field="Profit" action="Sum" rename="Sum_Profit" />
+                <SummarizeField field="Customer ID" action="CountDistinct" rename="Distinct_Customer ID" />
+                <SummarizeField field="Quantity" action="Count" rename="Qty_Count" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Product" size="255" source="Summarize: GroupBy - Product" type="V_String" />
+                <Field name="Sum_Sales" source="Summarize: Sum - Sales" type="Double" />
+                <Field name="Sum_Profit" source="Summarize: Sum - Profit" type="Double" />
+                <Field name="Distinct_Customer ID" source="Summarize: CountDistinct - Customer ID" type="Int64" />
+                <Field name="Qty_Count" source="Summarize: Count" type="Int64" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Product" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="522" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_11248_0978f801a5114fd3b02015985a4dd69b_\Engine_11580_fc01327aea584c6aa699a8752e43a103_.yxdb</TempFile>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Unique" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Unique" />
+      <Destination ToolID="25" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="25" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Unique" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Unique" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="25" Connection="Join" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="25" Connection="Right" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Report" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Data" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Unique" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (2)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (38)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Workflow Macro</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (37)</Name>
+          <ToolId value="37" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (2)</Name>
+              <ToolId value="2" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (38)</Description>
+              <Name>Macro Output (38)</Name>
+              <ToolId value="38" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="2" Selected="True" />
+        <Tool ToolId="24" Selected="False" />
+        <Tool ToolId="27" Selected="False" />
+        <Tool ToolId="29" Selected="True" />
+        <Tool ToolId="30" Selected="False" />
+        <Tool ToolId="34" Selected="True" />
+        <Tool ToolId="35" Selected="False" />
+        <Tool ToolId="38" Selected="True" />
+        <Tool ToolId="8" Selected="False" />
+        <Tool ToolId="13" Selected="False" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

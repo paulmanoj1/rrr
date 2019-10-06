@@ -1,0 +1,3 @@
+https://api.binance.com/api/v3/ticker/bookTicker?symbol=TMP1BTC
+https://bittrex.com/api/v1.1/public/getticker?market=BTC-TMP1
+https://api.kucoin.com/v1/open/tick?symbol=TMP1-BTC

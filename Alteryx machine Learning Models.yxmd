@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2019.2">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="6" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">E:\Alteryx\Customer-Churn-data.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>28591</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Customer-Churn-data.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="customerID" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="gender" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="SeniorCitizen" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="Partner" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="Dependents" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="tenure" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="PhoneService" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="MultipleLines" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="InternetService" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="OnlineSecurity" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="OnlineBackup" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="DeviceProtection" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="TechSupport" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="StreamingTV" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="StreamingMovies" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="Contract" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="PaperlessBilling" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="PaymentMethod" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="MonthlyCharges" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="TotalCharges" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="Churn" size="254" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="258" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="customerID" selected="True" />
+            <Field field="gender" selected="True" />
+            <Field field="SeniorCitizen" selected="True" />
+            <Field field="Partner" selected="True" />
+            <Field field="Dependents" selected="True" />
+            <Field field="tenure" selected="True" />
+            <Field field="PhoneService" selected="True" />
+            <Field field="MultipleLines" selected="True" />
+            <Field field="InternetService" selected="True" />
+            <Field field="OnlineSecurity" selected="True" />
+            <Field field="OnlineBackup" selected="True" />
+            <Field field="DeviceProtection" selected="True" />
+            <Field field="TechSupport" selected="True" />
+            <Field field="StreamingTV" selected="True" />
+            <Field field="StreamingMovies" selected="True" />
+            <Field field="Contract" selected="True" />
+            <Field field="PaperlessBilling" selected="True" />
+            <Field field="PaymentMethod" selected="True" />
+            <Field field="Churn" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="customerID" size="10" source="File: E:\Alteryx\Customer-Churn-data.csv" type="String" />
+            <Field name="gender" size="6" source="File: E:\Alteryx\Customer-Churn-data.csv" type="String" />
+            <Field name="SeniorCitizen" source="File: E:\Alteryx\Customer-Churn-data.csv" type="Byte" />
+            <Field name="Partner" size="3" source="File: E:\Alteryx\Customer-Churn-data.csv" type="String" />
+            <Field name="Dependents" size="3" source="File: E:\Alteryx\Customer-Churn-data.csv" type="String" />
+            <Field name="tenure" source="File: E:\Alteryx\Customer-Churn-data.csv" type="Byte" />
+            <Field name="PhoneService" size="3" source="File: E:\Alteryx\Customer-Churn-data.csv" type="String" />
+            <Field name="MultipleLines" size="16" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="InternetService" size="11" source="File: E:\Alteryx\Customer-Churn-data.csv" type="String" />
+            <Field name="OnlineSecurity" size="19" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="OnlineBackup" size="19" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="DeviceProtection" size="19" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="TechSupport" size="19" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="StreamingTV" size="19" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="StreamingMovies" size="19" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="Contract" size="14" source="File: E:\Alteryx\Customer-Churn-data.csv" type="String" />
+            <Field name="PaperlessBilling" size="3" source="File: E:\Alteryx\Customer-Churn-data.csv" type="String" />
+            <Field name="PaymentMethod" size="25" source="File: E:\Alteryx\Customer-Churn-data.csv" type="V_String" />
+            <Field name="MonthlyCharges" source="File: E:\Alteryx\Customer-Churn-data.csv" type="Double" />
+            <Field name="TotalCharges" source="File: E:\Alteryx\Customer-Churn-data.csv" type="Double" />
+            <Field name="Churn" size="3" source="File: E:\Alteryx\Customer-Churn-data.csv" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="390" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [TotalCharges]&gt;1000 &#xA;THEN &quot;High&quot; &#xA;ELSEIF [TotalCharges] &gt;=500 then &quot;Medium&quot;&#xA;ELSE &quot;Low&quot; &#xA;ENDIF" field="Cust_Category" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Cust_Category = IF [TotalCharges]&gt;1000 
+THEN "High" 
+ELSEIF [TotalCharges] &gt;=500...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="558" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_2620_47d5017fd5e641dfb57f91647ebe74ed_\Engine_11580_a58f7006ac8a4d3caf5872da547e789f_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="138" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="MonthlyCharges" selected="True" type="Double" size="8" />
+            <SelectField field="TotalCharges" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="414" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression><![CDATA[[gender] = "Male" AND
+ [StreamingTV] = "No" 
+]]></Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>gender</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-08-24 12:57:44</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>male</Operand>
+              <StartDate>2019-08-24 12:57:44</StartDate>
+              <EndDate>2019-08-24 12:57:44</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[[gender] = "Male" AND
+ [StreamingTV] = "No" 
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="546" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Admin\AppData\Local\Temp\Engine_2620_47d5017fd5e641dfb57f91647ebe74ed_\Engine_11580_17cce3a2e99e4b68837f43e74a90b552_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="True" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="False" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Alteryx machine Learning Models</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
